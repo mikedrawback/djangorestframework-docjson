@@ -8,7 +8,7 @@ There are only two classes so far.
 
 ### DocJSONIdentityField
 
-Subclass of ```HyperlinkedIdentityField ``` that wraps the hyperlink in ``` {'type': '_link': 'href': '...'} ```:
+Subclass of ```HyperlinkedIdentityField ``` that wraps the hyperlink in ``` {'_type': 'link': 'href': '...'} ```:
 
     from rest_framework_docjson.fields import DocJSONIdentityField
     
@@ -20,5 +20,5 @@ Subclass of ```HyperlinkedIdentityField ``` that wraps the hyperlink in ``` {'ty
 
 ### DocJSONModelSerializer
 
-Subclass of ``` ModelSerializer ``` that wraps returned data in ``` {'type': '_list', 'items': '...'} ``` when the serializer is instantiated with ``` many=True ```
+Subclass of ``` ModelSerializer ``` that wraps returned data in ``` {'_type': 'list', 'items': '...'} ``` when the serializer is instantiated with ``` many=True ```
 
