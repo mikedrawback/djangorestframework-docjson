@@ -1,11 +1,13 @@
 from rest_framework import serializers
 
 
-class DocJSONModelSerializer(serializers.ModelSerializer):
+class DocJSONSerializerMixin(object):
     @property
     def data(self):
-
-        data = super(DocJSONModelSerializer, self).data
+        """
+        wraps the serialized representation in the DocJSON list type
+        """
+        data = super(DocJSONSerializerMixin, self).data
         if self.many:
             return {'_type': 'list', 'items': [item for item in data]}
         return data
@@ -14,11 +16,18 @@ class DocJSONModelSerializer(serializers.ModelSerializer):
         """
         wraps the nested representation in the DocJSON list type
         """
-
-        data = super(DocJSONModelSerializer, self)\
+        data = super(DocJSONSerializerMixin, self)\
             .field_to_native(obj, field_name)
 
         if hasattr(data, '__iter__'):
             return {'_type': 'list', 'items': [item for item in data]}
 
         return data
+
+
+class DocJSONSerializer(DocJSONSerializerMixin, serializers.Serializer):
+    pass
+
+
+class DocJSONModelSerializer(DocJSONSerializerMixin, serializers.ModelSerializer):
+    pass
