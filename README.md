@@ -36,7 +36,7 @@ Same as Django Rest Framework's ``` reverse() ``` but wraps the returned URL in 
 
 Define an object with meta or navigation to serialize into your DocJSON document.  Pass that object into your generic view to place the content of your view inside the document.  You can override ``` get_document() ``` or ``` get_document_serializer() ``` on ``` GenericDocJSONAPIView ``` for custom behavior.  Only ``` ListDocJSONAPIView ``` and ``` RetrieveDocJSONAPIView ``` are implemented so far.
 
-*** Example: ***
+** Example: **
 
     class NavigationDocument(object):
         categories = Category.objects.published().distinct()
@@ -46,7 +46,7 @@ Define an object with meta or navigation to serialize into your DocJSON document
     class ArticleList(generics.ListDocJSONAPIView):
         serializer_class = ArticleListSerializer
         queryset = Article.objects.published()
-        view_key = 'articles'
+        document_key = 'articles'
         document = NavigationDocument()
         document_serializer = NavigationDocumentSerializer
 
