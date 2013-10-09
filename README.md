@@ -1,4 +1,4 @@
-# DocJSON tools for Django Rest Framework
+# DocJSON tools for Django REST Framework
 
 Some helper classes and functions for [Django REST Framework](http://django-rest-framework.org/) for building hypermedia APIs in the [DocJSON document format](https://github.com/docjson/docjson).
 
