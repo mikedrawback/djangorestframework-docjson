@@ -24,6 +24,10 @@ Subclass of ```HyperlinkedIdentityField ``` that wraps the hyperlink in ``` {'_t
 
 Subclasses of Django REST Framework's ``` Serializer ``` and ``` ModelSerializer ``` that wrap serialized data in ``` {'_type': 'list', 'items': '...'} ``` when the serializer is instantiated with ``` many=True ```
 
+#### DocJSONPaginationSerializer
+
+Provides the minimum DocJSON requirement for list pagination objects.  Includes a 'next' hyperlink, sets the ``` results_field ``` to ``` 'items' ```.
+
 
 ### Functions
 
