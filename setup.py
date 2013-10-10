@@ -5,7 +5,7 @@ README = open(os.path.join(os.path.dirname(__file__), 'README.md')).read()
 
 setup(
     name='djangorestframework-docjson',
-    version='0.0.1',
+    version='0.0.2',
     packages=['rest_framework_docjson'],
     include_package_data=True,
     license='BSD License',
