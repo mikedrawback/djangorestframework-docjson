@@ -34,3 +34,14 @@ Provides the minimum DocJSON requirement for list pagination objects.  Includes 
 #### reverse
 
 Same as Django Rest Framework's ``` reverse() ``` but wraps the returned URL in ``` {'_type': 'link': 'href': '...'} ```.
+
+### Renderers
+
+#### DocJSONRenderer
+
+Same as Django REST framework's ``` JSONRenderer ``` except for:
+
+media type:  ``` 'application/vnd.document+json' ```
+format:  ``` 'docjson' ```
+
+In accordance with the [IANA assignment here](http://www.iana.org/assignments/media-types/application/vnd.document+json).
