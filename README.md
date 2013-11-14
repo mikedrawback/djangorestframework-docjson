@@ -7,7 +7,7 @@ Some helper classes and functions for [Django REST Framework](http://django-rest
 
 #### DocJSONIdentityField
 
-Subclass of ```HyperlinkedIdentityField ``` that wraps the hyperlink in ``` {'_type': 'link': 'href': '...'} ```:
+Subclass of ```HyperlinkedIdentityField ``` that wraps the hyperlink in ``` {'_type': 'link': 'url': '...'} ```:
 
     from rest_framework_docjson.fields import DocJSONIdentityField
     
@@ -33,7 +33,7 @@ Provides the minimum DocJSON requirement for list pagination objects.  Includes 
 
 #### reverse
 
-Same as Django Rest Framework's ``` reverse() ``` but wraps the returned URL in ``` {'_type': 'link': 'href': '...'} ```.
+Same as Django Rest Framework's ``` reverse() ``` but wraps the returned URL in ``` {'_type': 'link': 'url': '...'} ```.
 
 ### Renderers
 

@@ -6,5 +6,5 @@ class DocJSONIdentityField(relations.HyperlinkedIdentityField):
         url = super(DocJSONIdentityField, self).get_url(*args, **kwargs)
         return {
             '_type': 'link',
-            'href': url
+            'url': url
         }
