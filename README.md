@@ -18,17 +18,6 @@ Subclass of ```HyperlinkedIdentityField ``` that wraps the hyperlink in ``` {'_t
         model = Article
 
 
-### Serializers
-
-#### DocJSONSerializer and DocJSONModelSerializer
-
-Subclasses of Django REST Framework's ``` Serializer ``` and ``` ModelSerializer ``` that wrap serialized data in ``` {'_type': 'list', 'items': '...'} ``` when the serializer is instantiated with ``` many=True ```
-
-#### DocJSONPaginationSerializer
-
-Provides the minimum DocJSON requirement for list pagination objects.  Includes a 'next' hyperlink, sets the ``` results_field ``` to ``` 'items' ```.
-
-
 ### Functions
 
 #### reverse
@@ -37,9 +26,9 @@ Same as Django Rest Framework's ``` reverse() ``` but wraps the returned URL in 
 
 ### Renderers
 
-#### DocJSONRenderer
+#### DocJSONRenderer and UnicodeDocJSONRenderer
 
-Same as Django REST framework's ``` JSONRenderer ``` except for:
+Adds to top level element ``` {"_type": "document} ``` to the serialized data before rendering.  Also uses the view's ``` get_view_name() ``` and ``` get_view_description() ``` to populate the  ``` "meta": "title" ``` and ``` "meta": "description" ```.
 
 media type:  ``` 'vnd.document+json' ```
 format:  ``` 'docjson' ```
